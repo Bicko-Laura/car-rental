@@ -1,74 +1,91 @@
-import { Image, StyleSheet, Platform } from 'react-native';
-
+import { Image, StyleSheet, Platform, View, ScrollView, Text, TextInput,TouchableOpacity  } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import Button from '../../components/Button';
+import Textbox from '../../components/Textbox';
 
 export default function HomeScreen() {
   return (
-    <ParallaxScrollView
-      headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
-      headerImage={
-        <Image
-          source={require('@/assets/images/partial-react-logo.png')}
-          style={styles.reactLogo}
-        />
-      }>
-      <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">Welcome!</ThemedText>
-        <HelloWave />
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 1: Try it</ThemedText>
-        <ThemedText>
-          Edit <ThemedText type="defaultSemiBold">app/(tabs)/index.tsx</ThemedText> to see changes.
-          Press{' '}
-          <ThemedText type="defaultSemiBold">
-            {Platform.select({
-              ios: 'cmd + d',
-              android: 'cmd + m',
-              web: 'F12'
-            })}
-          </ThemedText>{' '}
-          to open developer tools.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 2: Explore</ThemedText>
-        <ThemedText>
-          Tap the Explore tab to learn more about what's included in this starter app.
-        </ThemedText>
-      </ThemedView>
-      <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Step 3: Get a fresh start</ThemedText>
-        <ThemedText>
-          When you're ready, run{' '}
-          <ThemedText type="defaultSemiBold">npm run reset-project</ThemedText> to get a fresh{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> directory. This will move the current{' '}
-          <ThemedText type="defaultSemiBold">app</ThemedText> to{' '}
-          <ThemedText type="defaultSemiBold">app-example</ThemedText>.
-        </ThemedText>
-      </ThemedView>
-    </ParallaxScrollView>
-  );
+    <SafeAreaView style={styles.container}>
+      <ScrollView>
+
+        <View>
+        <TextInput style={{borderRadius: 74 , height: 60, justifyContent: 'center', 
+        alignItems: 'center', width:'85%', backgroundColor: 'white', paddingHorizontal: 20,
+         marginTop: 20, alignSelf:'center'}} placeholder='Search for a car'/>
+
+        </View >
+        <ScrollView horizontal={true} style={styles.carType}>
+        <TouchableOpacity style={{backgroundColor: '#304FFE', padding: 10, borderRadius: 8, marginHorizontal: 15, 
+          marginVertical: 20,width: 151,height: 161,}}>
+          <Image resizeMode='contain' style={{width:'100%', height:'70%'}} source={require('../../assets/images/image 6.png')}/>
+          <Text style={{fontSize: 16,fontWeight: '400',color: 'white', alignSelf:'center', marginBottom: 3}}>Standard</Text>
+          <Text style={{fontSize: 16,fontWeight: '400',color:'white', alignSelf:'center', marginBottom: 3 }}>56</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.carButton}>
+          <Image resizeMode='contain' style={{width:'100%', height:'70%'}} source={require('../../assets/images/image 7.png')}/>
+          <Text style={styles.carButtonText}>Prestige</Text>
+          <Text style={styles.carButtonText}>22</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.carButton}>
+          <Image resizeMode='contain' style={{width:'80%', height:'70%'}} source={require('../../assets/images/image 8.png')}/>
+          <Text style={styles.carButtonText}>SUV</Text>
+          <Text style={styles.carButtonText}>34</Text>
+        </TouchableOpacity>
+
+       </ScrollView>
+       <View>
+          <Text style={{fontSize: 14, fontWeight: 400, fontFamily:'Poppins', color:'black', paddingLeft: 20}}>Available vehicles</Text>
+        </View>
+
+        <View>
+          <TouchableOpacity style={styles.car}></TouchableOpacity>
+          <TouchableOpacity style={styles.car}></TouchableOpacity>
+          
+        </View>
+
+      </ScrollView>
+    </SafeAreaView>
+  )
 }
 
 const styles = StyleSheet.create({
-  titleContainer: {
+  container:{
+    flex: 1,
+    backgroundColor: ' #F5F5F5',
+  },
+  carType:{
     flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+  carButton:{
+    backgroundColor: 'white',
+    padding: 10,
+    borderRadius: 8,
+    marginHorizontal: 15,
+    marginVertical: 20,
+    width: 151,
+    height: 161,
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
+  carButtonText:{
+    fontSize: 16,
+    fontWeight: '400',
+    color: 'black',
+    alignSelf: 'center',
+    fontFamily: 'Poppins',
+    marginBottom: 3,
+    
   },
-});
+  car:{
+    backgroundColor: 'white',
+    borderRadius: 35,
+    marginHorizontal: 20,
+    marginVertical: 20,
+    width:'90%',
+    height: 355,
+  }
+})
