@@ -44,8 +44,46 @@ export default function HomeScreen() {
         </View>
 
         <View>
-          <TouchableOpacity style={styles.car}></TouchableOpacity>
-          <TouchableOpacity style={styles.car}></TouchableOpacity>
+          <TouchableOpacity style={styles.car}>
+          <View style={{flexDirection:'row', gap: 10, marginHorizontal: 20, marginVertical: 10}}>
+            <Text style={{fontSize:34, fontWeight: 800, fontFamily:'Gilroy', marginRight: 75}}>Toyota</Text>
+            <Text style={{color:'#304FFE', fontSize:34, fontWeight:300}}>$350</Text>
+          </View>
+
+          <View style={{flexDirection:'row', gap: 10, marginHorizontal: 20, marginVertical: 10}}>
+            <Text style={{fontSize:14, fontWeight: 400, fontFamily:'Poppins', marginRight: 165,color:'#7D8EA3'}}>Yaris iA</Text>
+            <Text style={{fontSize:14, fontWeight: 400, fontFamily:'Poppins', color:'#7D8EA3'}}>/month</Text>
+          </View>
+
+          <View style={{flexDirection:'row', gap: 10, marginHorizontal: 20, marginVertical: 10}}>
+            <Text style={{fontSize:14, fontWeight: 400, fontFamily:'Poppins', marginRight: 150,color:'black'}}>Engine</Text>
+            <Text style={{color:'black', fontSize:14, fontWeight:400}}>4-Cyl 1.5 Liter</Text>
+          </View>
+
+          <Image resizeMode='contain' style={{height:'65%', width:'100%'}} source={require('../../assets/images/car.png')}/>
+
+
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.car}> 
+          <View style={{flexDirection:'row', gap: 10, marginHorizontal: 20, marginVertical: 10}}>
+            <Text style={{fontSize:34, fontWeight: 800, fontFamily:'Gilroy', marginRight: 75}}>Hyundai</Text>
+            <Text style={{color:'#304FFE', fontSize:34, fontWeight:300}}>$250</Text>
+          </View>
+
+          <View style={{flexDirection:'row', gap: 10, marginHorizontal: 20, marginVertical: 10}}>
+            <Text style={{fontSize:14, fontWeight: 400, fontFamily:'Poppins', marginRight: 165,color:'#7D8EA3'}}>i20</Text>
+            <Text style={{fontSize:14, fontWeight: 400, fontFamily:'Poppins', color:'#7D8EA3'}}>/month</Text>
+          </View>
+
+          <View style={{flexDirection:'row', gap: 10, marginHorizontal: 20, marginVertical: 10}}>
+            <Text style={{fontSize:14, fontWeight: 400, fontFamily:'Poppins', marginRight: 150,color:'black'}}>Engine</Text>
+            <Text style={{color:'black', fontSize:14, fontWeight:400}}>6-Cyl 1.0 Liter</Text>
+          </View>
+
+          <Image resizeMode='contain' style={{height:'65%', width:'100%'}} source={require('../../assets/images/Screenshot 2025-05-02 042813.png')}/>
+          
+          
+          </TouchableOpacity>
           
         </View>
 
